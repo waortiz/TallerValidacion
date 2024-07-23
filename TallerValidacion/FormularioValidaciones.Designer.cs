@@ -1,6 +1,6 @@
 ﻿namespace TallerValidacion
 {
-    partial class Form1
+    partial class FormularioValidaciones
     {
         /// <summary>
         ///  Required designer variable.
@@ -34,6 +34,7 @@
             this.btnVerResultado = new System.Windows.Forms.Button();
             this.erpMensaje = new System.Windows.Forms.ErrorProvider(this.components);
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.erpMensaje)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,15 +71,26 @@
             // 
             this.erpMensaje.ContainerControl = this;
             // 
-            // Form1
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(179, 242);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(290, 53);
+            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.Text = "&Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // FormularioValidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnVerResultado);
             this.Controls.Add(this.txtNota);
             this.Controls.Add(this.lblNota);
-            this.Name = "Form1";
+            this.Name = "FormularioValidaciones";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.erpMensaje)).EndInit();
             this.ResumeLayout(false);
@@ -93,5 +105,6 @@
         private Button btnVerResultado;
         private ErrorProvider erpMensaje;
         private ToolTip ttMensaje;
+        private Button btnCerrar;
     }
 }
