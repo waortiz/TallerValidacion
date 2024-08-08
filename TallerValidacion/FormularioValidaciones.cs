@@ -19,22 +19,23 @@ namespace TallerValidacion
                     MessageBox.Show("La nota no es válida");
                     return;
                 }
-                var nota = decimal.Parse(txtNota.Text);
-
-                if (nota < 0 || nota > 10)
+                Nota nota = new Nota();
+                nota.Calificacion = double.Parse(txtNota.Text);
+                if (nota.Calificacion < 0 || nota.Calificacion > 10)
                 {
                     erpMensaje.SetError(txtNota, "La nota no es válida. Debe estar entre 0 y 10");
                     MessageBox.Show("La nota no es válida. Debe estar entre 0 y 10");
                     return;
                 }
-
-                if (nota > 5)
+                   
+                CalculoNota calculo = new CalculoNota();
+                if (calculo.ValidarNota(nota))
                 {
-                    MessageBox.Show($"Felicitaciones. Haz ganado con una nota de {nota.ToString("###.#")}");
+                    MessageBox.Show($"Felicitaciones. Haz ganado con una nota de {nota.Calificacion.ToString("###.#")}");
                 }
                 else
                 {
-                    MessageBox.Show($"Lo sentimos. Haz perdido con una nota de {nota.ToString("###.#")}");
+                    MessageBox.Show($"Lo sentimos. Haz perdido con una nota de {nota.Calificacion.ToString("###.#")}");
                 }
             }
             catch (Exception exc)
