@@ -37,6 +37,11 @@ namespace TallerValidacion
                 {
                     MessageBox.Show($"Lo sentimos. Haz perdido con una nota de {nota.Calificacion.ToString("###.#")}");
                 }
+
+                //Le indico al entorno de ejecución que puede disponer de la memoria usada por estos
+                //objetos
+                nota = null;
+                calculo = null;
             }
             catch (Exception exc)
             {
